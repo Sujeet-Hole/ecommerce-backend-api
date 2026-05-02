@@ -11,6 +11,7 @@ class Cart(Base):
 
     user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"))
 
+    quantity = Column(Integer , nullable = False)
     created_at = Column(DateTime, default=datetime.utcnow)
 
     user = relationship("User", back_populates="carts")
