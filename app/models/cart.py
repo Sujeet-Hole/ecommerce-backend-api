@@ -8,11 +8,14 @@ class Cart(Base):
     __tablename__ = "carts"
 
     id = Column(Integer, primary_key=True)
-
     user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"))
 
-    quantity = Column(Integer , nullable = False)
     created_at = Column(DateTime, default=datetime.utcnow)
 
     user = relationship("User", back_populates="carts")
     items = relationship("CartItem", back_populates="cart", cascade="all, delete")
+
+
+
+
+    

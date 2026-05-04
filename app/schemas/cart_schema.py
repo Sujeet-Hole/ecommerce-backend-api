@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 class AddToCartSchema(BaseModel):
-    product_id = int
-    quantity = int
+    product_id : int
+    quantity : int
 
     
